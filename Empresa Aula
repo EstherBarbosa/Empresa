@@ -1,0 +1,19 @@
+*Estrutura do Projeto*
+- `index.html`: Página inicial- `login.html`: Página de login- `busca.html`: Página de busca- `recomendar.html`: Página de recomendações- `estilo.css`: Folha de estilo CSS- `script.js`: Arquivo JavaScript
+*Código*
+*index.html*```<!DOCTYPE html><html lang="pt-BR"><head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Academia Inteligente</title> <link rel="stylesheet" href="estilo.css"></head><body> <header> <nav> <ul> <li><a href="login.html">Login</a></li> <li><a href="busca.html">Busca</a></li> </ul> </nav> </header> <main> <h1>Bem-vindo à Academia Inteligente!</h1> </main> <script src="script.js"></script></body></html>```
+*login.html*```<!DOCTYPE html><html lang="pt-BR"><head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Login</title> <link rel="stylesheet" href="estilo.css"></head><body> <header> <nav> <ul> <li><a href="index.html">Voltar</a></li> </ul> </nav> </header> <main> <h1>Login</h1> <form id="form-login"> <label for="usuario">Usuário:</label> <input type="text" id="usuario" name="usuario"><br><br> <label for="senha">Senha:</label> <input type="password" id="senha" name="senha"><br><br> <button type="submit">Entrar</button> </form> </main> <script src="script.js"></script></body></html>```
+*busca.html*```<!DOCTYPE html><html lang="pt-BR"><head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Busca</title> <link rel="stylesheet" href="estilo.css"></head><body> <header> <nav> <ul> <li><a href="index.html">Voltar</a></li> </ul> </nav> </header> <main> <h1>Busca</h1> <form id="form-busca"> <label for="busca">Buscar:</label> <input type="text" id="busca" name="busca"><br><br> <button type="submit">Buscar</button> </form> <div id="resultados"></div> </main> <script src="script.js"></script></body></html>```
+*estilo.css*```body { font-family: Arial, sans-serif; margin: 0; padding: 0;}
+header { background-color: #333; color: #fff; padding: 1em; text-align: center;}
+nav ul { list-style: none; margin: 0; padding: 0;}
+nav li { display: inline-block; margin-right: 20px;}
+nav a { color: #fff; text-decoration: none;}
+main { display: block; margin: 20px;}
+h1 { margin-top: 0;}
+#form-login, #form-busca { margin-top: 20px;}
+label { display: block; margin-bottom: 10px;}
+input[type="text"], input[type="password"] { width: 100%; height: 30px; margin-bottom: 20px; padding: 10px; box-sizing: border-box;}
+button[type="submit"] { background-color: #333; color: #fff; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer;}
+button[type="submit"]:hover { background-color: #444;}```
+*script.js*```// Evento de submit do form de logindocument.getElementById("form-login").addEventListener("submit", function(event) { event.preventDefault(); // Enviar dados para o backend fetch("/login", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ usuario:
